@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reactive;
 using Xamarin.Forms;
 
 namespace Hauynite.Views
@@ -18,8 +17,17 @@ namespace Hauynite.Views
 		void OnLoginClicked(object sender, EventArgs args)
 		{
 			viewModel.LoginAsync()
-			         .Subscribe(result => {
-				System.Diagnostics.Debug.WriteLine(result.ToString());
+					 .Subscribe(result =>
+			{
+				switch (result)
+				{
+					case Result.Success:
+						Application.Current.MainPage = new NavigationPage(new FriendsListPage());
+						break;
+					default:
+						System.Diagnostics.Debug.WriteLine("Login: " + result);
+						break;
+				}
 			});
 		}
 	}
