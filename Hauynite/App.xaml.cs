@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Hauynite.Views;
 
 namespace Hauynite
 {
@@ -8,7 +9,7 @@ namespace Hauynite
 		{
 			InitializeComponent();
 
-			MainPage = new HauynitePage();
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart()

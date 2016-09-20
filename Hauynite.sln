@@ -68,4 +68,18 @@ Global
 		{E6EB88C1-E247-495E-8032-CE7A88D1FDBA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{E6EB88C1-E247-495E-8032-CE7A88D1FDBA}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = application/xml
+		$0.XmlFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.scope = application/xml
+		$2.DefaultFormat = $3
+		$3.AttributesInNewLine = True
+		$3.WrapAttributes = True
+		$3.AlignAttributes = True
+		$2.inheritsScope = application/xml
+	EndGlobalSection
 EndGlobal
