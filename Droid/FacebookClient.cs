@@ -36,7 +36,7 @@ namespace Hauynite.Droid
 				HandleSuccess = loginResult =>
 				{
 					token = loginResult.AccessToken;
-					activity.CreateDatabase(token.UserId);
+					(Xamarin.Forms.Application.Current as Hauynite).OnLogin(token.UserId);
 					var intent = new Intent(FacebookLoginReceiver.ActionKey);
 					intent.PutExtra(FacebookLoginReceiver.ExtraResult, (int)Result.Success);
 					intent.PutExtra(FacebookLoginReceiver.ExtraUserId, token.UserId);

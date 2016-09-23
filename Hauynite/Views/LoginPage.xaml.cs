@@ -22,7 +22,6 @@ namespace Hauynite.Views
 				switch (result.Item1)
 				{
 					case Result.Success:
-						(Application.Current as App).OnLogin(result.Item2);
 						Application.Current.MainPage = new NavigationPage(new FriendsListPage());
 						break;
 					default:

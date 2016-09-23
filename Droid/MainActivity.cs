@@ -31,18 +31,13 @@ namespace Hauynite.Droid
 
 			Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-			LoadApplication(new App());
+			LoadApplication(new Hauynite());
 		}
 
 		protected override void OnActivityResult(int requestCode, Android.App.Result resultCode, Intent data)
 		{
 			base.OnActivityResult(requestCode, resultCode, data);
 			client.OnActivityResult(requestCode, (int)resultCode, data);
-		}
-
-		internal void CreateDatabase(string userId)
-		{
-			
 		}
 	}
 }

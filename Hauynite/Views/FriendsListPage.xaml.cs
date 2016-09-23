@@ -14,15 +14,17 @@ namespace Hauynite
 			InitializeComponent();
 
 			viewModel = new FriendsListViewModel();
+			BindingContext = viewModel;
+
 
 			viewModel.GetOwnNameAsync()
 					 .Subscribe((name) =>
-			{
-				Title = name;
-			}, (exception) =>
-			{
-				System.Diagnostics.Debug.WriteLine("Error: " + exception);
-			});
+					 {
+						 Title = name;
+					 }, (exception) =>
+					 {
+						 System.Diagnostics.Debug.WriteLine("Error: " + exception);
+					 });
 		}
 	}
 }

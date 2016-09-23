@@ -3,9 +3,11 @@ using Hauynite.Views;
 
 namespace Hauynite
 {
-	public partial class App : Application
+	public partial class Hauynite : Application
 	{
-		public App()
+		private DataRepository repository;
+
+		public Hauynite()
 		{
 			InitializeComponent();
 
@@ -29,6 +31,13 @@ namespace Hauynite
 
 		public void OnLogin(string userId)
 		{
+			var sqlite = DependencyService.Get<ISQLite>();
+			repository = new DataRepository(sqlite, userId);
+		}
+
+		public DataRepository GetRepository()
+		{
+			return repository;
 		}
 	}
 }
