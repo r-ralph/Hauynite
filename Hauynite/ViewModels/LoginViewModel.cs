@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Hauynite
@@ -16,12 +15,12 @@ namespace Hauynite
 			phoneFeatureService = DependencyService.Get<IPhoneFeatureService>();
 		}
 
-		public IObservable<Result> LoginAsync()
+		public IObservable<Tuple<Result, string>> LoginAsync()
 		{
-			return Observable.Create((IObserver<Result> observer) => {
-				phoneFeatureService.LoginFinished += (result) =>
+			return Observable.Create((IObserver<Tuple<Result, string>> observer) => {
+				phoneFeatureService.LoginFinished += (result, userId) =>
 				{
-					observer.OnNext(result);
+					observer.OnNext(new Tuple<Result, string>(result, userId));
 					observer.OnCompleted();
 				};
 				phoneFeatureService.Login();

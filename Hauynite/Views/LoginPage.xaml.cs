@@ -19,9 +19,10 @@ namespace Hauynite.Views
 			viewModel.LoginAsync()
 					 .Subscribe(result =>
 			{
-				switch (result)
+				switch (result.Item1)
 				{
 					case Result.Success:
+						(Application.Current as App).OnLogin(result.Item2);
 						Application.Current.MainPage = new NavigationPage(new FriendsListPage());
 						break;
 					default:

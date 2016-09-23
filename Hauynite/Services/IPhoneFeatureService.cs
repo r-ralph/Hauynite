@@ -6,6 +6,9 @@ namespace Hauynite
 	public interface IPhoneFeatureService
 	{
 		void Login();
-		event Action<Result> LoginFinished;
+		event Action<Result, string> LoginFinished;
+
+		void GetOwnName();
+		event Action<Result, string, string> GetOwnNameFinished;
 	}
 }

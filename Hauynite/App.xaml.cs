@@ -26,5 +26,9 @@ namespace Hauynite
 		{
 			// Handle when your app resumes
 		}
+
+		public void OnLogin(string userId)
+		{
+		}
 	}
 }
