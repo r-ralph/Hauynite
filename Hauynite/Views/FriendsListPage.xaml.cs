@@ -16,7 +16,6 @@ namespace Hauynite
 			viewModel = new FriendsListViewModel();
 			BindingContext = viewModel;
 
-
 			viewModel.GetOwnNameAsync()
 					 .Subscribe((name) =>
 					 {
@@ -25,6 +24,11 @@ namespace Hauynite
 					 {
 						 System.Diagnostics.Debug.WriteLine("Error: " + exception);
 					 });
+		}
+
+		public void OnClickMenuItem(object sender, EventArgs e)
+		{
+			//DisplayAlert("Seleted", ((ToolbarItem)sender).Name, "OK");
 		}
 	}
 }

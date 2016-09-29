@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="Hauynite.FriendsListPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+		xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="Hauynite.FriendsListPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem
+			Name="Sync"
+			Activated="OnClickMenuItem"
+			Order="Primary"
+			Priority="0"
+			Icon="ic_refresh.png"/>
+	</ContentPage.ToolbarItems>
+	<RelativeLayout
+		VerticalOptions="FillAndExpand"
+		HorizontalOptions="FillAndExpand">
+		<ActivityIndicator
+			RelativeLayout.XConstraint="{ConstraintExpression
+					Type=RelativeToParent,
+					Property=Width,
+					Factor=0.5}"
+			RelativeLayout.YConstraint="{ConstraintExpression
+					Type=RelativeToParent,
+					Property=Height,
+					Factor=0.5}"
+			Color="Blue"
+			IsVisible="{Binding IsBusy}"
+			IsRunning="{Binding IsBusy}" />
+	</RelativeLayout>
 </ContentPage>
